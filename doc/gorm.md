@@ -12,14 +12,14 @@ The GORM is fantastic ORM library for Golang, aims to be developer friendly. It 
 
 The overview and feature of ORM are:
 
-*   Full\-Featured ORM (almost)
-*   Associations (Has One, Has Many, Belongs To, Many To Many, Polymorphism)
-*   Callbacks (Before/After Create/Save/Update/Delete/Find)
-*   Preloading (eager loading)Transactions
-*   Composite Primary Key
-*   SQL Builder
-*   Logger
-*   Developer Friendly
+*   Full\-Featured ORM (almost)    
+*   Associations (Has One, Has Many, Belongs To, Many To Many, Polymorphism)          
+*   Callbacks (Before/After Create/Save/Update/Delete/Find)            
+*   Preloading (eager loading)Transactions             
+*   Composite Primary Key           
+*   SQL Builder              
+*   Logger         
+*   Developer Friendly          
 
 To install GORM just use the following command :
 
@@ -27,17 +27,20 @@ To install GORM just use the following command :
 
 In order to use, just import this package into your project along with the database drivers as you want
 
+```go
 import (
 \_ "github.com/go\-sql\-driver/mysql"
 "github.com/jinzhu/gorm"
 \_ "github.com/jinzhu/gorm/dialects/mysql" //You could import dialect
 )
+```
 
 Now use the gorm to do the operations on the [database](https://www.mindbowser.com/golang-go-database-sql/).
-
 In order to connect to the database, just use the following syntax.
 
+```go
 db, err := gorm.Open(“mysql”, “user:password@/dbname?charset=utf8&parseTime=True&loc=Local”)
+```
 
 NOTE: In order to handle time. Time, you need to use parseTime parameter
 
@@ -47,6 +50,7 @@ For PostgreSQL, ***db, err := gorm.Open(“postgres”, “user=gorm dbname=gorm
 
 And remember to close the database when it is not in use using defer defer db.Close()
 
+```go
 main.go
 import (
 “log”
@@ -113,17 +117,18 @@ db.Debug().DropTableIfExists(&UserModel{})
 db.Debug().AutoMigrate(&UserModel{})
 //Auto create table based on Model
 }
+```
 
 ![Go With GORM](https://cdn.mindbowser.com/wp-content/uploads/2020/10/24203629/Go-With-GORM-1.jpg)
 
 ![Go With GORM](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20463%20140'%3E%3C/svg%3E)
 
 Now just go and check the “ormdemo” database, there you will find the table along with the columns.
-
 Note: You need to create the database manually.
 
 The gorm also has given model definition including fields like Id, CreatedAt, UpdatedAt, DeletedAt. If you want to use just embed **gorm.Model** in your model/struct.
 
+```go
 // Model's definition given by gorm
 type Model struct {
 ID uint \`gorm:"primary\_key"\`
@@ -136,39 +141,38 @@ type User struct {
 gorm.Model // fields \`ID\`, \`CreatedAt\`, \`UpdatedAt\`, \`DeletedAt\`will be added
 Name string
 }
+```
 
 In the gorm.Model the fields
 
-**CreatedAt** – used to store records created time
-
-**UpdatedAt** – used to store records updated time
-
-**DeletedAt** – used to store records deleted time, It won’t delete the records just set the value of DeletedAt’s field to the current time and you won’t find the record when querying i.e. what we call soft deletion.
+**CreatedAt** – used to store records created time        
+**UpdatedAt** – used to store records updated time          
+**DeletedAt** – used to store records deleted time, It won’t delete the records just set the value of DeletedAt’s field to the current time and you won’t find the record when querying i.e. what we call soft deletion.           
 
 If you want to set some SQL parameters to the model fields then you can do like this
 
+```go
 type UserModel struct{
 Id int \`gorm:"primary\_key";"AUTO\_INCREMENT"\`
 Name string \`gorm:"size:255"\`
 Address string \`gorm:"type:varchar(100)”\`
 }
+```
 
 It is creating a table with the plural version of the model name like if your model name is UserModel then gorm is creating the tables in its plural version user\_models. So in order to avoid this just do db***.SingularTable(true)***.
 
 In gorm, the ID field is automatically set to a Primary key field with auto increment property.
 
-### Are You Looking For Golang Development Services?
-
+### Are You Looking For Golang Development Services?   
 [Know More](https://www.mindbowser.com/golang-development-company/)
 
-## CRUD Operations
-
+## CRUD Operations   
 The query for the SQL using gorm can be specified like this
 
-### Create/Insert
-
+### Create/Insert  
 In order to create or insert a record, you need to use the Create() function. The save() is also there that will return the primary key of the inserted record.
 
+```go
 user:=&UserModel{Name:"John",Address:"New York"}
 db.Create(user)
 
@@ -185,11 +189,13 @@ UserModel{name: "Justin",Address:"California"},
 for \_, user := range users {
 db.Create(&user)
 }
+```
 
-### Update
+### Update  
 
 In order to update the records in the table using gorm, look into the below sample example.
 
+```go
 user:=&UserModel{Name:"John",Address:"New York"}
 // Select, edit, and save
 db.Find(&user)
@@ -230,11 +236,12 @@ db.Where("address=?", "Los Angeles").Delete(&UserModel{})
 
 // Select all records from a model and delete all
 db.Model(&UserModel{}).Delete(&UserModel{})
+```
 
 ### Queries
+In order to fetch the records from the database and do some SQL stuffs gorm has given some query functions. We’ll now do a quick discussion on it.  
 
-In order to fetch the records from the database and do some SQL stuffs gorm has given some query functions. We’ll now do a quick discussion on it.
-
+```go
 // Get first record, order by primary key
 db.First(&user)
 // Get last record, order by primary key
@@ -263,10 +270,13 @@ db.Where("name LIKE ?", "%ti%").Find(&user)
 
 // AND
 db.Where("name = ? AND address >= ?", "Martin", "Los Angeles").Find(&user)
+```
 
 Now just go through the program.
 
 main.go
+
+```go
 package main
 
 import (
@@ -356,29 +366,32 @@ db.Where("address=?", "Los Angeles").Delete(&UserModel{})
 // Select all records from a model and delete all
 db.Debug().Model(&UserModel{}).Delete(&UserModel{})
 }
+```
 
 ![Go With GORM](https://cdn.mindbowser.com/wp-content/uploads/2020/10/24203630/Go-With-GORM-2.jpg)
-
 ![Go With GORM](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20342%20199'%3E%3C/svg%3E)
 
 ## Transaction
 
+```go
 tx := db.Begin()
 err := tx.Create(&user).Error
 if err != nil {
 tx.Rollback()
 }
 tx.Commit()
+```
 
 ## Associations
-
 The relationship defines how structs or models interact with each other. So for this, you need to create/define what kind of relationship at both ends.
 
 *   **One To One Relationship**
-
 One to One Relationship specifies how the fields of one models are related to others by specifying one to one mapping. For now, I’ve considered and done one to one mapping between Place and Town struct/model. Here one Town belongs to one Place relational mapping I’ve created.
 
+
 Place.go
+
+```go
 package model
 import ()
 type Place struct {
@@ -387,16 +400,21 @@ Name string
 Town Town
 TownId int \`gorm:"ForeignKey:id"\` //this foreignKey tag didn't works
 }
+```
 
 Town.go
+```go
 package model
 import ()
 type Town struct {
 ID int \`gorm:"primary\_key"\`
 Name string
 }
+```
 
 main.go
+
+```go
 package main
 
 import (
@@ -470,9 +488,9 @@ fmt.Println("After Association", towns, places, err)
 
 defer Db.Close()
 }
+```
 
 ![Go With GORM](https://cdn.mindbowser.com/wp-content/uploads/2020/10/24203630/Go-With-GORM-3.jpg)
-
 ![Go With GORM](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20482%20213'%3E%3C/svg%3E)
 
 Note: Here in the example, you need to create the foreign keys manually using AddForeignKey() function because auto\-migration of the foreign key is not happening.
@@ -481,6 +499,7 @@ Note: Here in the example, you need to create the foreign keys manually using Ad
 
 In One to Many relationships, models of two classes are related by specifying one to many mapping. Here in the example, I’ve created the mapping like one customer has many contacts.
 
+```go
 main.go
 package main
 import (
@@ -548,15 +567,16 @@ db.Debug().Where("customer\_name=?", customers.CustomerName).Delete(&customers)
 fmt.Println("After Delete", customers)
 
 }
+```
 
 ![Go With GORM](https://cdn.mindbowser.com/wp-content/uploads/2020/10/24203631/Go-With-GORM-4.jpg)
-
 ![Go With GORM](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20477%20156'%3E%3C/svg%3E)
 
 *   ### Many To Many Relationship
 
 User belongs to many languages and ‘user\_languages’ will be a join table.
 
+```go
 main.go
 package main
 import (
@@ -622,3 +642,4 @@ db.Debug().Where("uname=?", "John").Delete(&user)
 db.Debug().Model(&UserL{}).Where("uname=?", "Ray").Update("uname", "Martin")
 
 }
+```
