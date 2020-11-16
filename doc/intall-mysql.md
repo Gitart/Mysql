@@ -2,8 +2,11 @@
 
 [Ubuntu](https://www.digitalocean.com/community/tags/ubuntu)[MySQL](https://www.digitalocean.com/community/tags/mysql)[Ubuntu 18.04](https://www.digitalocean.com/community/tags/ubuntu-18-04)
 
+[Сатаья по установке] (https://www.digitalocean.com/community/tutorials/mysql-ubuntu-18-04-ru)
+
+
 *   
-     [Сатаья по установке] (https://www.digitalocean.com/community/tutorials/mysql-ubuntu-18-04-ru)
+     
     ![](https://community-cdn-digitalocean-com.global.ssl.fastly.net/variants/vtnVCy1A4cHabZh6twSoYSYW/6a540d0de9b44df9962f62205489ba6e2a5beab748fa47e816b60597a256ba9b)
 
     (https://www.digitalocean.com/community/users/mdrake)
