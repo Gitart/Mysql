@@ -6,7 +6,7 @@
      [Сатаья по установке] (https://www.digitalocean.com/community/tutorials/mysql-ubuntu-18-04-ru)
     ![](https://community-cdn-digitalocean-com.global.ssl.fastly.net/variants/vtnVCy1A4cHabZh6twSoYSYW/6a540d0de9b44df9962f62205489ba6e2a5beab748fa47e816b60597a256ba9b)
 
-    ](https://www.digitalocean.com/community/users/mdrake)
+    (https://www.digitalocean.com/community/users/mdrake)
 *   By [Mark Drake](https://www.digitalocean.com/community/users/mdrake)
 
     PostedJuly 18, 2018 192.3k views
