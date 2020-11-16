@@ -26,8 +26,9 @@ I have used the character set **utf8mb4** to support a wide range of characters.
 
 In this section, we will design the **User Table** to store user information. The same table can be used to manage different types of users including admins and customers. It can also be used to relate the product creators(from the admin panel) and customer orders placed on the website. Users can track their own orders and track the status. Below mentioned is the description of all the columns of the User Table.
 
-| Id | The unique id to identify the user. |  
+|Field|Description|
 |---------|-------------|
+| Id | The unique id to identify the user. |  
 | First Name | The first name of the user. |   
 | Middle Name | The middle name of the user. |        
 | Last Name | The last name of the user. |        
@@ -65,8 +66,9 @@ CREATE TABLE \`shop\`.\`user\` (
 
 In this section, we will design the **Product Table** to store the product data. Below mentioned is the description of all the columns of the Product Table.
 
-| Id | The unique id to identify the product. |   
+|Field|Description|
 |---------|-------------|
+| Id | The unique id to identify the product. |   
 | User Id | The user id to identify the admin or vendor. |              
 | Title | The product title to be displayed on the Shop Page and Product Page. |           
 | Meta Title | The meta title to be used for browser title and SEO. |            
@@ -120,6 +122,8 @@ CREATE TABLE \`shop\`.\`product\` (
 
 The Product Meta Table can be used to store additional information about products including the product banner URL etc. Below mentioned is the description of all the columns of the Product Meta Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the product meta. |           
 | Product Id | The product id to identify the parent product. |             
 | Key | The key identifying the meta. |             
@@ -146,6 +150,8 @@ ENGINE = InnoDB;
 
 In this section, we will design the **Product Review Table** to store the product reviews. Below mentioned is the description of all the columns of the Product Review Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the product review. |            
 | Product Id | The product id to identify the parent product. |            
 | Parent Id | The parent id to identify the parent review. |      
@@ -189,6 +195,8 @@ ADD CONSTRAINT \`fk\_review\_parent\`
 
 In this section, we will design the **Category Table** and **Product Category Table** to store the product categories and their mappings. Below mentioned is the description of all the columns of the Category Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the category. |      
 | Parent Id | The parent id to identify the parent category. |      
 | Title | The category title. |      
@@ -218,6 +226,8 @@ ADD CONSTRAINT \`fk\_category\_parent\`
 
 Below mentioned is the description of all the columns of the Product Category Table.
 
+|Field|Description|
+|---------|-------------|
 | Product Id | The product id to identify the product. |      
 | Category Id | The category id to identify the category. |      
 
@@ -255,6 +265,8 @@ This section provides the tables to manage the virtual carts to store the user s
 
 **Notes**: The Cart Table and Cart Item Table can be made optional if the Local Data, Session, or in\-memory database like Redis is used to store the cart data. The same can be referred to create the order on payment success.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the cart. |      
 | User Id | The user id to identify the user or buyer associated with the cart. |      
 | Session Id | The unique session id associated with the cart. |      
@@ -305,6 +317,8 @@ CREATE TABLE \`shop\`.\`cart\` (
 
 Below mentioned is the description of all the columns of the Cart Item Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the cart item. |      
 | Product Id | The product id to identify the product associated with the cart item. |      
 | Cart Id | The cart id to identify the cart associated with the cart item. |      
@@ -352,6 +366,8 @@ ADD CONSTRAINT \`fk\_cart\_item\_cart\`
 
 This section provides the tables to manage the store orders. A logged\-in user can also be associated with the order. Below mentioned is the description of all the columns of the Order Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the order. |      
 | User Id | The user id to identify the user or buyer associated with the order. |      
 | Session Id | The unique session id associated with the order. |      
@@ -418,6 +434,8 @@ CREATE TABLE \`shop\`.\`order\` (
 
 Below mentioned is the description of all the columns of the Order Item Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the ordered item. |      
 | Product Id | The product id to identify the product associated with the ordered item. |      
 | Order Id | The order id to identify the order associated with the ordered item. |      
@@ -463,6 +481,8 @@ ADD CONSTRAINT \`fk\_order\_item\_order\`
 
 We also need a transaction table to track the order payments made by the buyer and for bookkeeping. We can also use the same table to record the partial or full refund of the order. Below mentioned is the description of all the columns of the Transaction Table.
 
+|Field|Description|
+|---------|-------------|
 | Id | The unique id to identify the transaction. |      
 | User Id | The user id to identify the user associated with the transaction. |      
 | Order Id | The order id to identify the order associated with the transaction. |      
