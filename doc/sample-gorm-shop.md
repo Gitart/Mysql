@@ -26,7 +26,8 @@ I have used the character set **utf8mb4** to support a wide range of characters.
 
 In this section, we will design the **User Table** to store user information. The same table can be used to manage different types of users including admins and customers. It can also be used to relate the product creators(from the admin panel) and customer orders placed on the website. Users can track their own orders and track the status. Below mentioned is the description of all the columns of the User Table.
 
-| Id | The unique id to identify the user. |   
+| Id | The unique id to identify the user. |  
+|---------|-------------|
 | First Name | The first name of the user. |   
 | Middle Name | The middle name of the user. |        
 | Last Name | The last name of the user. |        
@@ -64,7 +65,8 @@ CREATE TABLE \`shop\`.\`user\` (
 
 In this section, we will design the **Product Table** to store the product data. Below mentioned is the description of all the columns of the Product Table.
 
-| Id | The unique id to identify the product. |               
+| Id | The unique id to identify the product. |   
+|---------|-------------|
 | User Id | The user id to identify the admin or vendor. |              
 | Title | The product title to be displayed on the Shop Page and Product Page. |           
 | Meta Title | The meta title to be used for browser title and SEO. |            
