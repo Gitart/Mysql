@@ -63,5 +63,15 @@ CREATE EVENT `myevent`
 ```      
       
       
+### Периодичность 
+
+```sql
+   EVERY 1 HOUR
+   EVERY 1 DAY
+   EVERY 5 SECOND
+   EVERY 1 MONTH
+```
+
+
 
       
