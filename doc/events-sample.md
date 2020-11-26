@@ -72,6 +72,12 @@ CREATE EVENT `myevent`
    EVERY 1 MONTH
 ```
 
+### Более сложный пример
+```sql
+      EVERY 1 DAY START '2020-02-12 23:59:59' END CURRENT_TIMESTAMP + INTERVAL 1 WEEK
+ ```
+ 
+ 
 
 
       
