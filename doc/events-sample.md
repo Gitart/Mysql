@@ -1,10 +1,10 @@
-# Sample usage events 
+# SAMPLE USAGE EVENTS IN MYSQL
 
 ```sql
 use parts;
 ```
 
-### Просомтр доступности использования событий
+### Просмотр доступности использования событий
 ```sql
 -- Show events on off
 show variables like 'event_scheduler';
