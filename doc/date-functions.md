@@ -61,3 +61,83 @@
 | [WEEK OF YEAR()](https://w3resource.com/mysql/date-and-time-functions/mysql-weekofyear-function.php) | MySQL WEEKOFYEAR() returns the calender week (as a number) of a given date. |
 | [YEAR()](https://w3resource.com/mysql/date-and-time-functions/mysql-year-function.php) | MySQL YEAR() returns the year for a given date. |
 | [YEARWEEK()](https://w3resource.com/mysql/date-and-time-functions/mysql-yearweek-function.php) | MySQL YEARWEEK() returns year and week number for a given date. |
+
+
+## Sample
+
+```mysql
+select system_user();
+select CURRENT_TIMESTAMP();
+select uuid();
+select uuid_short();
+SELECT WEEK('2009-05-18',1);
+SELECT WEEK(current_date(),1);         -- https://www.w3resource.com/mysql/date-and-time-functions/mysql-adddate-function.php
+SELECT current_date();
+SELECT ADDTIME('2008-05-15 13:20:32.50','2 1:39:27.50') as required_datetime;
+SELECT CONVERT_TZ('2008-11-15 16:10:00','+02:00','+02:00');
+SELECT ADDDATE('2008-05-15', INTERVAL 10 DAY) as required_date;
+SELECT CURDATE();
+SELECT CURDATE()+1333;
+SELECT CURRENT_TIME;
+SELECT CURRENT_TIMESTAMP;
+SELECT CURTIME();
+SELECT DATE_ADD('2008-05-15', INTERVAL 10 DAY) as required_date;
+-- https://www.w3resource.com/mysql/date-and-time-functions/mysql-date_format-function.php
+select date_format(CURDATE(), '%a %D %b %Y'); 
+SELECT DATE_FORMAT('2008-05-15 22:23:00', '%W %D %M %Y');
+SELECT DATE_SUB('2008-05-15', INTERVAL 10 DAY);
+SELECT DATEDIFF('2008-05-18 11:31:31','2008-05-10');   -- =8
+SELECT DAY('2020-05-15'); -- 15
+SELECT DAYNAME('2008-05-15');
+SELECT DAYOFMONTH('2008-05-15');
+
+SELECT DAYOFWEEK('2008-05-15');
+SELECT WEEK('2009-05-18'); -- 20
+SELECT WEEKDAY('2009-05-19');
+SELECT WEEKOFYEAR('2009-05-19');
+
+SELECT YEARWEEK('2009-05-18');
+SELECT YEAR('2009-05-19');
+SELECT DAYOFYEAR('2008-05-15');
+SELECT DAYOFYEAR(CURDATE());
+SELECT EXTRACT(YEAR FROM '2008-05-15');
+SELECT EXTRACT(HOUR_SECOND FROM '2008-05-15 15:53:20');
+SELECT EXTRACT(YEAR_MONTH FROM '2008-05-15 15:53:20');
+
+SELECT FROM_DAYS('733910');      -- 2009-05-18 -- ОБРАТНАЯ ФУНКЦИИ TO_DAYS
+SELECT TO_DAYS('2009-05-18');    -- количество дней с 0 года по 18 мая 2009 г.
+SELECT FROM_DAYS(733910);        -- возвращает дату по отношению к значению даты.
+
+SELECT UNIX_TIMESTAMP();
+SELECT FROM_UNIXTIME(1255033470);
+SELECT FROM_UNIXTIME(1255033470, '%Y %D %M %h:%i:%s %x');
+
+
+SELECT GET_FORMAT(DATE,'EUR'); -- '%d.%m.%Y' -- https://www.w3resource.com/mysql/date-and-time-functions/mysql-get_format-function.php
+SELECT HOUR('15:13');
+SELECT LAST_DAY('2009-06-18');  -- '2009-06-30'
+SELECT LOCALTIME;
+SELECT MAKEDATE(2009,138);  -- 2009 г. и количество дней 138.
+SELECT MAKETIME(15,25,36);
+SELECT MICROSECOND('2009-05-18 10:15:21.000423');
+SELECT MINUTE('2009-05-18 10:15:21.000423');
+SELECT MONTH('2009-05-18');
+SELECT MONTHNAME('2009-05-18');
+SELECT NOW();
+SELECT PERIOD_ADD(200905,13);  -- после добавления 13 месяцев с периодом 200905.
+SELECT PERIOD_DIFF(200911, 200901);  -- МЕС 
+SELECT QUARTER('2009-01-18');
+SELECT SEC_TO_TIME(3610);
+SELECT SECOND('21:29:46');
+SELECT STR_TO_DATE('18,05,2009','%d,%m,%Y');  -- '2009-05-18'
+SELECT SUBDATE('2008-05-15', INTERVAL 10 DAY);
+SELECT SUBTIME('2009-05-18 10:29:43.999999','19 3:31:18.000002');  -- Следующая инструкция вернет значение datetime между двумя датами 2009-05-18 10: 29: 43.999999 и 19 3: 31: 18.000002, указанными в аргументах.
+SELECT TIME_FORMAT('97:15:40','%H %k %h %I %l');
+SELECT TIME_TO_SEC('05:15:40');
+SELECT TIMEDIFF('2009-05-18 15:45:57.005678','2009-05-18 13:40:50.005670');  -- Следующий оператор вернет разницу между двумя значениями datetime 2009-05-18 15: 45: 57.005678 и 2009-05-18 13: 40: 50.005670.
+SELECT TIMESTAMP('2009-05-18');
+SELECT TIMESTAMPADD(MONTH,2,'2009-05-18'); -- вернет значение даты после добавления 2 месяцев к указанной дате 2009-05-18.
+SELECT TIMESTAMPDIFF(MONTH,'2009-05-18','2009-07-29');   -- оператор вернет значение в месяцах путем вычитания 2009-05-18 из 2009-07-29.
+SELECT UTC_DATE, UTC_DATE();
+```
+
