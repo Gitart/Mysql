@@ -1,5 +1,15 @@
 # Guide To Design Database For Online Shopping Cart In MySQL
 
+Guide To Design Database For Online Shopping Cart In MySQL
+
+This tutorial provides complete steps to design a database schema of online shops and shopping carts to manage the users, 
+products, reviews, carts, orders, and payments. It can be further used to develop an online shop and shopping cart based websites or applications.
+
+The Entity Relationship Diagram or visual database design is shown below.
+
+![Online Shopping Cart Database Design](https://www.tutorials24x7.com/uploads/2020-04-27/files/tutorials24x7-mysql-online-shopping-cart-database-design.png "Online Shopping Cart Database Design")
+
+Online Shopping Cart
 ```sql
 CREATE SCHEMA `shop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
