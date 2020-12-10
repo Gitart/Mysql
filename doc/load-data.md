@@ -33,3 +33,26 @@ SET unique_checks=1;
 SET foreign_key_checks=1;
 SELECT count(*) FROM parts.bmw;
 ```
+
+## Путь к данным для закачки
+```
+  -- set secure-file-priv="c:\WORK\DATA";
+```
+
+## Пример запуска
+```
+mysqld --console --secure-file-priv=c:\WORK\DATA  --tmp-table-size=50000000000000 --max-heap-table-size=1222222222222
+```
+  
+## Просмoтр  в панели инстументов 
+
+```
+set global secure_file_priv="c:\WORK\DATA";
+SHOW VARIABLES LIKE "secure_file_priv";
+```
+
+## Включать возможность использовать загрузку
+```
+set global local_infile = 0;
+SHOW VARIABLES LIKE "local_infile";
+```
