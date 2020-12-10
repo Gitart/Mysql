@@ -49,6 +49,8 @@ mysqld --console --secure-file-priv=c:\WORK\DATA  --tmp-table-size=5000000000000
 ```
 set global secure_file_priv="c:\WORK\DATA";
 SHOW VARIABLES LIKE "secure_file_priv";
+
+SELECT @@GLOBAL.secure_file_priv;
 ```
 
 ## Включать возможность использовать загрузку
