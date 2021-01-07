@@ -1,4 +1,6 @@
 ## Create foreign index
+[Link resource](https://www.mysqltutorial.org/mysql-foreign-key/)
+
 
 ```sql
 ALTER TABLE `parts`.`orders`  ADD INDEX `idx_delivery_idx` (`delivery_type_id` ASC) VISIBLE;
