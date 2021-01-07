@@ -13,7 +13,7 @@ where orders.id is null
 ```
 
 
--- Нет подчиненных записей у ордеров
+* Нет подчиненных записей у ордеров
 ```sql
 select orders.id as Order_ID, 
        order_items.order_id , 
