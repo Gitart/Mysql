@@ -1,8 +1,14 @@
 ## Каскадное удаление связанных таблиц
 
-Условие :  
+**Условие :**  
 Есть основная таблица ORDERS и подчиненная таблица ITEMS     
 При удаление записи в таблице ORDRES должны и удалиться подчинененые записи в таблице ITEMS   
+
+
+**ВАЖНО**
+Все таблицы должны иметь ENGINE = InnoDB;   
+Без этого связи работать **не будут**.
+
 
 
 ```sql
@@ -71,8 +77,8 @@ CREATE TABLE IF NOT EXISTS `app_info` (
 `app_owner` varchar(50) DEFAULT NULL,
 `last_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-I am using the following SQL to create a table named tab_info:
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
 
 CREATE  TABLE `myDB`.`tab_info` (
 `_id` INT NOT NULL AUTO_INCREMENT ,
