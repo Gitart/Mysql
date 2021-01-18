@@ -62,7 +62,32 @@ ON  order_items.order_id = orders.id
 where order_items.order_id is null;
 ```
 
+## Еще примеры
 
+```sql
+CREATE TABLE IF NOT EXISTS `app_info` (
+`_id` int(11) NOT NULL AUTO_INCREMENT,
+`app_name` varchar(50) DEFAULT NULL,
+`app_owner` varchar(50) DEFAULT NULL,
+`last_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+PRIMARY KEY (`_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+I am using the following SQL to create a table named tab_info:
+
+CREATE  TABLE `myDB`.`tab_info` (
+`_id` INT NOT NULL AUTO_INCREMENT ,
+`app_id` INT NOT NULL ,
+`tab_title` VARCHAR(15) NOT NULL ,
+PRIMARY KEY (`_id`) ,
+UNIQUE INDEX `app_id_UNIQUE` (`app_id` ASC) ,
+INDEX `app_tab_key` (`app_id` ASC) ,
+CONSTRAINT `app_tab_key`
+  FOREIGN KEY (`app_id` )
+  REFERENCES `myDB`.`app_info` (`_id` )
+  ON DELETE CASCADE
+  ON UPDATE CASCADE); 
+  ```
+  
 
 
  
