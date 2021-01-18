@@ -57,8 +57,11 @@ from orders
 left  JOIN  order_items   
 ON  order_items.order_id = orders.id
 where order_items.order_id is null;
+```
 
--- Удаление ордеров у кторых нет дочерних записей
+### Удаление ордеров у кторых нет дочерних записей
+
+```sql
 set sql_safe_updates=0;
 
 delete orders
