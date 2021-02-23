@@ -72,4 +72,42 @@ ANSI_QUOTES：
  When ANSI_QUOTES is enabled, double quotes cannot be used to quote a string because it is interpreted as an identifier
  ```
  
+ 
+ ## Пример конфигурационного файла 
+ mysql/my.ini
+ 
+ ```
+ [mysqld]
+# Set 3306 port
+port=3306
+ # Set mysql installation directory
+ basedir=D:\\MySQL\mysql-8.0.15-winx64 # This needs to be modified according to the actual address, remember to use double slashes \\ here, single slashes will make mistakes here, but if you look at other people’s tutorials, some are Single slash. Try it yourself
+ # Set the storage directory of the mysql database data
+ datadir=D:\\MySQL\mysql-8.0.15-winx64\\Data # Same as above
+ # Allow maximum number of connections
+max_connections=200
+ # Allow the number of connection failures. This is to prevent someone from trying to attack the database system from this host
+max_connect_errors=10
+ # The character set used by the server is UTF8 by default
+character-set-server=utf8
+ # The default storage engine that will be used when creating a new table
+default-storage-engine=INNODB
+ # Use "mysql_native_password" plug-in authentication by default
+default_authentication_plugin=mysql_native_password
+ # Allow time null
+sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+[mysql]
+ # Set the default character set of the mysql client
+default-character-set=utf8
+[client]
+ # Set the port used by default when the mysql client connects to the server
+port=3306
+default-character-set=utf8
+```
+### Пример установки
+```
+sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+```
+
+
 [Линк](http://fkn.ktu10.com/?q=node/7016)
