@@ -3,7 +3,7 @@
 ### Разрешение вставки пустой даты в поля таблиц
 
  ```sql
- SET sql_mode = ALLOW_INVALID_DATES;
+ SET sql_mode = ALLOW_INVALID_DATES;           // САМЫЙ РАБОЧИЙ ВАРИАНТ ДРУГИЕ НЕ РАБОТАЮТ
  SET GLOBAL sql_mode = ALLOW_INVALID_DATES;   // изменить глобальную конфигурацию постоянное изменение.
  set SESSION sql_mode='SOMETHING';            // изменить конфигурацию сеанса Переменная SESSION влияет
 ```
