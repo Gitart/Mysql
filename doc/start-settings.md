@@ -40,6 +40,12 @@ Error 1292: Incorrect datetime value: '0000-00-00' for column 'eka_print' at row
 Чтобы после перезагрузке сервера изменения сохранились, придётся править конфигурационный файл.  
 
 
+## Restart mysql
+```
+sudo service mysql restart
+```
+
+
 ## Oter parameters
 ```sql
 ONLY_FULL_GROUP_BY：
