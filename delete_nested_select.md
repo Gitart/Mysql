@@ -53,10 +53,16 @@ VIEW `parts-point`.`dbls` AS
 
 
 ## Удаление записей из таблицы - на основаении View
+Запустить надо несколько раз пока на выходе в результататх будет 0 записей. 
+С каждым разом количество будет уменьшаться - это происходит в том случае если 
+повторяющихся записей больше чем 2
 
 ```sql
 delete from `parts-point`.`stock_products` where id in (select id from dbls)
+```
 
+## Контроль
+```sql
 select  max(e.id) id from (select id,code from  `parts-point`.stock_products) e group by `code` having count(*)>1 limit 10;
 ```
 
