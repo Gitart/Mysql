@@ -29,3 +29,9 @@ INSERT INTO `stock_products` VALUES (1,1,1,37,'PORSCHE','2020-11-18 15:10:18',' 
 ```sql
 SHOW ENGINE INNODB STATUS;
 ```
+
+
+Для исключения повтора 
+```sql
+ALTER TABLE  `parts-point`.`stock_products` ADD CONSTRAINT Uniq_code UNIQUE KEY(`code`);
+```
