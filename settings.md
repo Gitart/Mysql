@@ -15,4 +15,9 @@ SET GLOBAL sql_mode = ALLOW_INVALID_DATES;
   Insert Into test (dates) values("");
 ```
 
+## Block table on time load data
+```sql
+LOCK TABLES `areas` WRITE;
+```
+
 
