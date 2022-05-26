@@ -1,4 +1,4 @@
-### MySQL Sample Database Schema
+## MySQL Sample Database Schema
 
 ### The MySQL sample database schema consists of the following tables:
 
