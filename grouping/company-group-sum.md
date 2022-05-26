@@ -17,5 +17,5 @@
     AND   o.typeget = 3
     AND   o.create_at  BETWEEN "2022-05-01" AND "2022-05-05"
     GROUP BY i.product_id, o.company 
-    ```
+```
     
