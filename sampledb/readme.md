@@ -1,1 +1,1 @@
-## :atom: My sql
+## 🔮 My sql
