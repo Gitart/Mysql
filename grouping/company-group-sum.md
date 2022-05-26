@@ -5,11 +5,11 @@
  
  ```sql
  SELECT 
-       MAX(o.create_at) datecreate,
-       MAX(o.company)   company,
-       MAX(i.product)   product,
-       SUM(i.weight)    weight,
-       SUM(i.qty)       qty
+       MAX(o.create_at) AS datecreate,
+       MAX(o.company)   AS company,
+       MAX(i.product)   AS product,
+       SUM(i.weight)    AS weight,
+       SUM(i.qty)       AS qty
     FROM order_items  i
     LEFT JOIN orders o
     ON    i.order_id = o.id
