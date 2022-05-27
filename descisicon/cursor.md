@@ -35,3 +35,10 @@ SET o.category_id = x.category_id ,
  WHERE o.order_id = idorder;
 END
 ```
+
+
+## Use one order
+
+```sql
+CALL `maindb`.`UpdateOrderGroup`(10);
+```
