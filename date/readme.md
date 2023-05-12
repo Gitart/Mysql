@@ -1,4 +1,4 @@
-## WOrk wit date 
+## Wоrk wit date 
 
 ```
 SELECT DATEDIFF("2017-06-25", "2017-06-15");
@@ -23,5 +23,8 @@ select DATE_ADD('2023-04-21 12:10:00', INTERVAL 5 DAY)
 ```
 
 
-
+## delete records older than 6 months
+```sql
+DELETE FROM Table1 WHERE dateAdded < DATEADD(MONTH, -6, GETDATE())
+```
 
