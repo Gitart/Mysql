@@ -205,7 +205,7 @@ WHERE
 
 ```
 
-[![Распродажа $3/месяц](https://cdn.sanity.io/images/708bnrs8/production/12e9f50316d9a0265b4583c6d257cae13f1f8eba-768x209.png?w=768&h=209&auto=format)](https://sitepoint.com/premium/library/?ref_medium=articlebanner)
+
 
 ## Изменение части документа JSON
 
