@@ -28,3 +28,12 @@ select DATE_ADD('2023-04-21 12:10:00', INTERVAL 5 DAY)
 DELETE FROM Table1 WHERE dateAdded < DATEADD(MONTH, -6, GETDATE())
 ```
 
+
+## Check column exists or not in a table using SQL
+```
+//SQL Syntax
+SHOW COLUMNS FROM `table` LIKE 'fieldname';
+
+//SQL Query
+SHOW COLUMNS FROM `posts` LIKE 'user_id';
+```
