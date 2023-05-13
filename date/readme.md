@@ -1,4 +1,4 @@
-## Wоrk wit date 
+## Wоrk with date 
 
 ```
 SELECT DATEDIFF("2017-06-25", "2017-06-15");
