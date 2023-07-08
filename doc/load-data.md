@@ -23,7 +23,7 @@ optimize table bmw;
 1. Установка - флаг local-infile=1 в секции [client]
 2. Установка - secure-file-priv="c:\WORK\DATA" в секции [server]
 3. Перезапуск сервере MySql
-4. Если используете Workbench можно установки сделать во вкладке - **"Connection"** - **"Advanced"** - **"Other"** - OPT_LOCAL_INFILE=1
+4. Если используете Workbench можно установки сделать во вкладке - **"Connection"** - **"Advanced"** - **"Other"** - **OPT_LOCAL_INFILE=1**
 
 
  https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict   
