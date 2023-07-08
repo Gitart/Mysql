@@ -21,9 +21,9 @@ delete  FROM parts.bmw;
 
 Сделаем некоторые настройки в файле инициализации **c:\ProgramData\MySQL\MySQL Server 8.0\my.ini** 
 
-1. Установка - флаг local-infile=1 в секции [client]
-2. Установка - secure-file-priv="c:\WORK\DATA" в секции [server]
-3. Перезапуск сервере MySql
+1. Установка - флаг **local-infile=1** в секции [client]
+2. Установка - **secure-file-priv="c:\WORK\DATA"** в секции [server]
+3. Перезапуск сервера MySql
 4. Если используете Workbench можно установки сделать во вкладке - **"Connection"** - **"Advanced"** - **"Other"** - **OPT_LOCAL_INFILE=1**
 
 
