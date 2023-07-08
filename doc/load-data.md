@@ -1,4 +1,4 @@
-### Для пакетного удаления или обновления 
+# Для пакетного удаления или обновления 
 Необходимо отключить защиту от массового изменения.
 **MySQL Ver 8.0**
 
@@ -12,21 +12,22 @@ delete  FROM parts.bmw;
 Для ускорения процесса необходима оптимизация. 
 
 ```mysql
-use parts;
-optimize table bmw;
+   use parts;
+   optimize table bmw;
 ```
 
-### Загрузка данных CSV 
+# 💡 Загрузка данных CSV 
  Эта установка позволяет загружать файл CSV с локального диска
 
-Сделаем некоторые настройки в файле инициализации c:\ProgramData\MySQL\MySQL Server 8.0\my.ini 
+Сделаем некоторые настройки в файле инициализации **c:\ProgramData\MySQL\MySQL Server 8.0\my.ini** 
+
 1. Установка - флаг local-infile=1 в секции [client]
 2. Установка - secure-file-priv="c:\WORK\DATA" в секции [server]
 3. Перезапуск сервере MySql
 4. Если используете Workbench можно установки сделать во вкладке - **"Connection"** - **"Advanced"** - **"Other"** - **OPT_LOCAL_INFILE=1**
 
 
- https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict   
+ [☝](https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict)   
  
 - his restriction can be removed from MySQL Workbench 8.0 in the following way. 
 - Edit the connection, on the Connection tab, 
