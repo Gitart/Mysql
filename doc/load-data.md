@@ -27,7 +27,7 @@ delete  FROM parts.bmw;
 4. Если используете Workbench можно установки сделать во вкладке - **"Connection"** - **"Advanced"** - **"Other"** - **OPT_LOCAL_INFILE=1**
 
 
- [☝](https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict)   
+ [☝ Fixed](https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict)   
  
 - his restriction can be removed from MySQL Workbench 8.0 in the following way. 
 - Edit the connection, on the Connection tab, 
