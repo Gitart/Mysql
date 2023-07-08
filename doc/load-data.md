@@ -16,6 +16,31 @@ optimize table bmw;
 ```
 
 ### Загрузка данных CSV 
+ Эта установка позволяет загружать файл CSV с локального диска
+
+ https://stackoverflow.com/questions/63361962/error-2068-hy000-load-data-local-infile-file-request-rejected-due-to-restrict   
+ 
+- his restriction can be removed from MySQL Workbench 8.0 in the following way. 
+- Edit the connection, on the Connection tab, 
+- go to the 'Advanced' sub-tab, and in the 'Others:' box add the line 'OPT_LOCAL_INFILE=1'.
+- This should allow a client using the Workbench to run LOAD DATA INFILE as usual.
+- Quoted from this link: https://bugs.mysql.com/bug.php?id=91872
+
+![image](https://github.com/Gitart/Mysql/assets/3950155/4f41a1a0-51a0-420d-961b-04dd9e35172f)
+
+### Example 
+```sql
+ LOAD DATA LOCAL INFILE "c:/WORK/DATA/ac.csv"  
+ INTO TABLE ss 
+ COLUMNS TERMINATED BY ',' 
+ ENCLOSED BY '\"' 
+ LINES TERMINATED BY '\n' 
+ IGNORE 1 LINES ;
+```
+
+
+
+
 
 ```mysql
 SET autocommit=0;
