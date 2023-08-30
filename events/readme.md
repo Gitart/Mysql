@@ -1,5 +1,6 @@
 # EVENTS
-![image](https://github.com/Gitart/Mysql/assets/3950155/7f74628f-886b-43aa-bc20-e7b3e88b3ef2)
+![image](https://github.com/Gitart/Mysql/assets/3950155/614a3df0-9824-43b6-aa22-5334e6227694)
+
 
 ## EVERY DAY
 ```sql
