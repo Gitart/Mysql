@@ -1,5 +1,6 @@
 ## Convert string date to date format
-We have date in string format and we needed convert to date this field
+We have a date in string format and we need to convert this field to a date.
+Here is what we do.
   
 ```sql
 SET SQL_SAFE_UPDATES = 0;
