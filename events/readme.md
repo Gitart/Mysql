@@ -1,5 +1,25 @@
-## EVENTS
+# EVENTS
 
+## EVERY DAY
+```sql
+use parts;
+
+-- CREATE EVENTS
+CREATE EVENT e_hourly
+ON SCHEDULE EVERY '1' DAY
+STARTS '2023-08-30 10:00:00' -- should be in the future
+DO
+TRUNCATE parts.logs;
+INSERT INTO parts.logs (DESCRIPTION) VALUES ('Clear logs');
+
+-- PREVIEW EVENTS
+show events;
+
+--  DROP EVENTS
+drop event if exists e_hourly;
+```
+
+## One Time Doing
 ```sql
 -- Create cheduler events 
 -- Выполняется один раз по заранее установленому времени 
