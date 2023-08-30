@@ -43,6 +43,16 @@ DO
 INSERT INTO m_works (title) VALUES ('Event is every Hours worked');
 ```
 
+### Start and finsh events
+```sql
+CREATE EVENT event_start_finish
+ON SCHEDULE EVERY 1 MINUTE
+STARTS CURRENT_TIMESTAMP
+ENDS CURRENT_TIMESTAMP + INTERVAL 1 HOUR
+DO
+   INSERT INTO messages(message,created_at)
+   VALUES('Test MySQL recurring Event',NOW());
+```
 
 ## Просмотр заданий в 
 ```sql
