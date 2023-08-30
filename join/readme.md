@@ -25,7 +25,32 @@ SET c.valume       = i.qty,
     c.summ         = i.summ,
     c.price        = i.price;
  -- WHERE c.id = 2;
+```
 
-
+## Example left join
+```sql
+SELECT
+          o.id         AS id,
+          o.num        AS num_doc,
+          o.account    AS account,
+          o.created_at  AS datecreate,
+          o.company    AS company,
+          o.typ        AS type,
+          i.id         As item_id, 
+          i.category   AS category,
+          i.grp        AS grp,
+          i.product    AS product,
+          i.weight     AS weight,
+          i.ei         AS ei,
+          i.price      AS price,
+          i.summ       AS summ,
+          (CASE
+            WHEN (o.typ = 1) THEN i.qty
+            ELSE (i.qty * -1)
+          END)         AS qty,
+          i.summ       AS summ
+        FROM order_items i
+        LEFT JOIN orders    o 
+        ON i.order_id   = o.id
 
 ```
