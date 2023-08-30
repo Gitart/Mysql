@@ -1,0 +1,41 @@
+## Load from file
+```sql
+LOAD DATA LOCAL INFILE '/path/pet.txt' INTO TABLE pet LINES TERMINATED BY '\r\n';
+```
+## Load locale
+```sql
+LOAD DATA LOCAL INFILE "c:/WORK/DATA/area.csv"  
+INTO TABLE ss
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
+CREATE TABLE jokes
+  (a INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  joke TEXT NOT NULL);
+LOAD DATA INFILE '/tmp/jokes.txt' INTO TABLE jokes
+  FIELDS TERMINATED BY ''
+  LINES TERMINATED BY '\n%%\n' (joke);
+```
+
+
+## load
+```sql
+LOAD DATA INFILE 'c:/00/loc.csv'
+INTO TABLE ss
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
+CREATE TABLE jokes
+  (a INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  joke TEXT NOT NULL);
+LOAD DATA INFILE '/tmp/jokes.txt' INTO TABLE jokes
+  FIELDS TERMINATED BY ''
+  LINES TERMINATED BY '\n%%\n' (joke);
+```
+
