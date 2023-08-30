@@ -44,6 +44,10 @@ INSERT INTO m_works (title) VALUES ('Event is every Hours worked');
 
 ## Просмотр заданий в 
 ```sql
+show events;
+
+OR
+
 SELECT * FROM information_schema.EVENTS
 WHERE EVENT_SCHEMA = 'boiler' 
 AND   ACTION_STATE = 'ENABLED';
