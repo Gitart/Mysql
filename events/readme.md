@@ -2,6 +2,48 @@
 
 ![image](https://github.com/Gitart/Mysql/assets/3950155/614a3df0-9824-43b6-aa22-5334e6227694)
 
+
+## Every Day start in 9.00 am
+```sql
+use parts;
+
+-- CREATE EVENTS
+
+ON SCHEDULE EVERY 1 DAY
+STARTS TIMESTAMP(CURRENT_DATE, '09:00:00') -- Start time at 9:00 AM
+
+DELIMITER //
+CREATE EVENT e_hourly
+
+ON SCHEDULE EVERY 1 DAY 
+STARTS TIMESTAMP(CURRENT_DATE, '09:20:00') -- Start time at 9:00 AM
+DO
+BEGIN
+-- TRUNCATE parts.logs;
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM `parts`.`logs` ;
+INSERT INTO parts.logs (DESCRIPTION) VALUES ('Clear logs');
+END
+//
+DELIMITER ;
+
+
+-- PREVIEW EVENTS
+-- show events;
+
+-- SET GLOBAL event_scheduler = ON;
+```
+
+
+
+
+
+
+
+
+
+
+
 ## EVERY DAY
 ```sql
 use parts;
