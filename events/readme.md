@@ -4,6 +4,9 @@
 
 
 ## Every Day start in 9.00 am
+We use ON SCHEDULE EVERY 1 DAY to specify that the event should run daily.
+The STARTS clause is used to set the start time for the event. TIMESTAMP(CURRENT_DATE, '09:00:00') ensures that the event starts at 9:20 AM every day.
+
 ```sql
 use parts;
 
