@@ -146,6 +146,7 @@ rem Выполнение запроса
 "c:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe"  -uroot -pSuperpassword mydbnew < create.sql
 ```
 
+![image](https://github.com/Gitart/Mysql/assets/3950155/2ed32192-5a56-4817-9896-9a719117d634)
 
 ## Advanced
 Creted batch file for backup databases everyday in time
