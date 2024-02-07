@@ -13,10 +13,6 @@
 
 ```
 # mysqldump -u [username] –p[password] [database_name] > [dump_file.sql]
-xxxxxxxxxx
- 
-1
-# mysqldump -u [username] –p[password] [database_name] > [dump_file.sql]
 ```
 
  
