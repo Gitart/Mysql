@@ -108,7 +108,7 @@
 # mysqlimport -u root -p rsyslog < rsyslog.sql
 ```
 
-## Example
+## Example Backup
 ```bat
 echo start backup audit
 "c:\Program Files\MySQL\MySQL Server 8.0\bin\mysqlpump.exe" -h localhost -P 3306 -uroot -pDBuser audit> audit.sql
@@ -117,7 +117,7 @@ rem восстановление базы
 "c:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe"  -uroot -pDBuser mydbnew < charity.sql
 ```
 
-## Пример выполнениея запроса
+## Пример выполнения запроса
 
 ```bat
 @echo off
