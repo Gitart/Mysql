@@ -107,3 +107,21 @@
 ```sql
 # mysqlimport -u root -p rsyslog < rsyslog.sql
 ```
+
+
+
+
+Пример
+
+```bat
+@echo off
+cls
+rem chcp 1252
+chcp 65001
+
+echo Start process ...
+
+rem Выполнение запроса
+
+"c:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe"  -uroot -pSuperpassword mydbnew < create.sql
+```
