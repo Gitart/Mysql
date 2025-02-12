@@ -180,3 +180,12 @@ SELECT           i.stock_id            AS stock_id,
 ALTER TABLE `boiler`.`orders` ADD INDEX `idx_contractid` (`contract_id` ASC);
 ```
 
+### CREATE TABLE
+```sql
+CREATE TABLE users2 (
+    id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
