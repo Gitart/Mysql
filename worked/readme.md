@@ -23,3 +23,22 @@ group by category_name, brand_name, model
 order by brand_name, model, qty asc
 ```
 
+```sql
+UPDATE accounts
+SET industry_id = FLOOR(1 + (RAND() * 10))
+WHERE industry_id IS NULL;
+```
+
+```sql
+SELECT 
+    a.id AS account_id,
+    a.name AS account_name,
+    i.name AS industry_name,
+    i.description AS industry_description
+FROM 
+    accounts a
+LEFT JOIN 
+    industries i ON a.industry_id = i.id;
+```
+
+
