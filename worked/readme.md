@@ -42,3 +42,56 @@ LEFT JOIN
 ```
 
 
+```sql
+SELECT 
+        o.id              AS id,
+        o.num             AS num_doc,
+        o.account         AS account,
+        o.created_at      AS datecreate,
+        o.company         AS company,
+        o.typ             AS type,
+        o.contract        AS contract,
+        o.location_id     AS location_id,
+        o.location        AS location,
+        o.stock_from      AS stock_from,
+        o.stock_from_name AS stock_from_name,
+        o.user_id         AS user_id,
+        o.description     AS user_name,
+        st.title          AS stock,
+        st.id             AS stock_id,
+        st.ved_id         AS ved_id,
+        st.code           AS stock_bo_code,
+        o.boiler_id       AS boiler_id,
+        o.boiler_name     AS boiler,
+        o.status_id       AS status_id,
+        o.ttn             AS ttn,
+        o.remark          AS comment,
+        o.recipient_id    AS status_bo,
+        o.ttn_date        AS ttn_date,
+        i.id              As item_id,
+        i.category        AS category,
+        i.grp_id          AS grp_id,
+        i.grp             AS grp,
+        i.product_id      AS product_id,
+        i.product         AS product,
+        i.weight          AS weight,
+        i.ei              AS ei,
+        i.price           AS price,
+        i.summ            AS summ,
+        i.qty             AS qty,
+        i.humidity        AS humidity,
+    pr.own_product    AS own_product,
+        pr.code           AS code,
+        pr.describe       AS product_bo,
+        ct.id             AS contract_id,
+        ct.status         AS contract_status,
+        concat(ct.num_contract," ",ct.company_name) AS contract_company
+        FROM              order_items i
+        LEFT JOIN         orders      o  ON i.order_id    = o.id
+        LEFT JOIN         stock_lists st ON i.stock_id    = st.id
+    LEFT JOIN         products    pr ON i.product_id  = pr.id
+        LEFT JOIN         contracts   ct ON o.contract_id = ct.id
+        WHERE             status_id   NOT IN ("1","2","101") 
+        
+        AND              o.ttn_date <  '2023-09-14'
+```
