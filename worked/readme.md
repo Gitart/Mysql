@@ -21,6 +21,7 @@ UPDATE remeber_sizes SET s85=CONCAT(s85, 'rrrrr')  WHERE id = 168;
 UPDATE `remeber_sizes` SET s90 = CONCAT(CAST(s90 AS CHAR), '1E') WHERE id = 168;
 ```
 
+### GROUP BY
 ```sql
 SELECT remeber_sizesremeber_sizesremeber_sizes category_name, brand_name, model,
 MIN(name) name,
@@ -32,14 +33,43 @@ FROM shop.products
 where qty>0 and category_name!=""
 group by category_name, brand_name, model
 order by brand_name, model, qty asc
+
+
+SELECT 
+ brand_name, size, count(*)
+FROM shop.products
+Where size 
+group by brand_name, size
+order by brand_name, size
+
+
+SELECT * FROM shop.products
+
+SELECT brand_name, color 
+FROM `products` 
+WHERE brand_name!='' 
+AND qty>0 
+GROUP BY brand_name,  color 
+ORDER BY brand_name
+
+SELECT brand_name, color 
+FROM `products` 
+WHERE brand_name<>'' 
+AND qty>0 
+GROUP BY brand_name,  color 
+ORDER BY brand_name
 ```
 
+
+### UPDATE
 ```sql
 UPDATE accounts
 SET industry_id = FLOOR(1 + (RAND() * 10))
 WHERE industry_id IS NULL;
 ```
 
+
+### LEFT JOIN
 ```sql
 SELECT 
     a.id AS account_id,
