@@ -11,7 +11,7 @@ FROM order_items
 GROUP BY product;
 ```
 
-
+### REGEXPR
 ```sql
 SELECT * FROM shop.products WHERE size REGEXP '^(70|75|80|85|90|95)';
 ```
@@ -82,6 +82,8 @@ LEFT JOIN
     industries i ON a.industry_id = i.id;
 ```
 
+
+### SELECT
 
 ```sql
 SELECT 
@@ -187,5 +189,28 @@ CREATE TABLE users2 (
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE orders (
+    id          INT           AUTO_INCREMENT PRIMARY KEY,
+    client_id   INT           COMMENT 'ID клиента',
+    order_date  DATE          COMMENT 'Дата заказа',
+    total_sum   DECIMAL(10,2) COMMENT 'Сумма заказа',
+    qty         INT           COMMENT 'Количество товаров',
+    status_id   INT           COMMENT 'Статус заказа'
+);
+
+
+
+CREATE TABLE order_items (
+    id          INT           AUTO_INCREMENT PRIMARY KEY,
+    order_id    INT           COMMENT 'ID заказа',
+    product_id  INT           COMMENT 'ID товара',
+    quantity    INT           COMMENT 'Количество',
+    price       DECIMAL(10,2) COMMENT 'Цена',
+    FOREIGN KEY (order_id) REFERENCES orders (id),
+    FOREIGN KEY (product_id) REFERENCES product (id)
+    
 );
 ```
