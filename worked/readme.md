@@ -1,6 +1,17 @@
 ## Works and tips
 
 
+### Pivot table
+```sql
+SELECT 
+    product,
+    GROUP_CONCAT(CASE WHEN qty <10  THEN qty END) AS 'd10',
+    GROUP_CONCAT(CASE WHEN qty>100  THEN qty END) AS 'd100'
+FROM order_items
+GROUP BY product;
+```
+
+
 ```sql
 SELECT * FROM shop.products WHERE size REGEXP '^(70|75|80|85|90|95)';
 ```
