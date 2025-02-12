@@ -117,3 +117,30 @@ SELECT
 FROM order_items
 GROUP BY product;
 ```
+
+
+
+
+### Orders
+```sql
+SELECT           i.stock_id            AS stock_id,
+                 st.title              AS stock ,
+                 MIN(o.typ)            AS typ,        
+                 MIN(st.ved_id)        AS ved_id,
+                 MIN(st.ved)           AS ved,
+                 MIN(vd.descr)         AS ved_name,
+                 MIN(DATE(o.ttn_date)) AS date_ttn,
+                 i.product_id          AS product_id,
+                 i.product             AS product,
+                 i.ei                  AS ei,
+                 SUM(i.qty)            AS qty
+                 FROM   order_items i
+            LEFT JOIN   orders      o         ON i.order_id   = o.id
+            LEFT JOIN   stock_lists st        ON i.stock_id   = st.id
+            LEFT JOIN   products    pr        ON i.product_id = pr.id
+            LEFT JOIN   veds        vd        ON st.ved_id    = vd.id
+            WHERE       o.status_id           = 3
+            AND         o.typ                != 5
+            GROUP BY    st.ved_id, i.stock_id, st.title, i.product_id, i.product, i.ei, o.typ, o.ttn_date
+            HAVING      qty!=0 AND DATE(o.ttn_date) <='2001-09-14'  AND  st.ved_id IN (2)
+```
