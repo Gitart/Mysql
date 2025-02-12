@@ -144,3 +144,9 @@ SELECT           i.stock_id            AS stock_id,
             GROUP BY    st.ved_id, i.stock_id, st.title, i.product_id, i.product, i.ei, o.typ, o.ttn_date
             HAVING      qty!=0 AND DATE(o.ttn_date) <='2001-09-14'  AND  st.ved_id IN (2)
 ```
+
+### Alter
+```sql
+ALTER TABLE `boiler`.`orders` ADD INDEX `idx_contractid` (`contract_id` ASC);
+```
+
