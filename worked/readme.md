@@ -106,3 +106,14 @@ SELECT
         
         AND              o.ttn_date <  '2023-09-14'
 ```
+
+
+### Enum
+```sql
+SELECT 
+    product,
+    GROUP_CONCAT(CASE WHEN qty <10  THEN qty END) AS 'd10',
+    GROUP_CONCAT(CASE WHEN qty>100  THEN qty END) AS 'd100'
+FROM order_items
+GROUP BY product;
+```
