@@ -214,3 +214,16 @@ CREATE TABLE order_items (
     
 );
 ```
+
+### Обновление баланса по категории из транзакций
+```SQL
+UPDATE categories 
+        SET balance = COALESCE((
+                       SELECT SUM(amount) 
+					   FROM   transactions 
+                       WHERE  transactions.category_id = categories.id 
+                       AND    transactions.user_id     = categories.user_id), 0) 
+        WHERE user_id = ?`, userid)
+```
+
+
