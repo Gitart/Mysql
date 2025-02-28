@@ -59,7 +59,10 @@ SELECT
 ## Join Update
 
 ```sql
-SELECT * FROM transactions  JOIN orders ON transactions.code  = orders.ttn  WHERE transactions.error = 'upds';
+SELECT * FROM transactions
+JOIN  orders ON transactions.code  = orders.ttn
+WHERE transactions.error = 'upds';
+
 SELECT * FROM transactions WHERE transactions.error = 'upds';
 SELECT * FROM transactions WHERE id_doc= '';
 
