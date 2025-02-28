@@ -82,7 +82,7 @@ WHERE  transactions.error = 'upds';
 select * from orders where ttn="В2002020";
 
 
--- Повтры в ИД 
+-- Повторы в ИД 
 SELECT id_doc, COUNT(*) as count
 FROM transactions
 GROUP BY id_doc
