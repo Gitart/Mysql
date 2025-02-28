@@ -54,3 +54,33 @@ SELECT
         ON i.order_id   = o.id
 
 ```
+
+
+## Join Update
+
+```sql
+SELECT * FROM transactions  JOIN orders ON transactions.code  = orders.ttn  WHERE transactions.error = 'upds';
+SELECT * FROM transactions WHERE transactions.error = 'upds';
+SELECT * FROM transactions WHERE id_doc= '';
+
+-- UPDATE transactions set error='empty_id_doc' where id_doc='';
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE transactions
+JOIN orders ON transactions.code  = orders.ttn  
+SET transactions.id_doc = orders.id,  transactions.id_company=orders.company_id,  transactions.id_contract=orders.contract_id, transactions.error='upds'
+WHERE  transactions.error = 'upds';
+
+-- Документ
+select * from orders where ttn="В2002020";
+
+
+-- Повтры в ИД 
+SELECT id_doc, COUNT(*) as count
+FROM transactions
+GROUP BY id_doc
+HAVING COUNT(*) > 1;
+
+```
+
