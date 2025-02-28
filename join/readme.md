@@ -69,7 +69,10 @@ SET SQL_SAFE_UPDATES = 0;
 
 UPDATE transactions
 JOIN orders ON transactions.code  = orders.ttn  
-SET transactions.id_doc = orders.id,  transactions.id_company=orders.company_id,  transactions.id_contract=orders.contract_id, transactions.error='upds'
+SET   transactions.id_doc = orders.id,
+      transactions.id_company=orders.company_id,
+      transactions.id_contract=orders.contract_id,
+      transactions.error='upds'
 WHERE  transactions.error = 'upds';
 
 -- Документ
